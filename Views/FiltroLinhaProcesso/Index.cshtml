@@ -1,0 +1,62 @@
+﻿
+
+
+
+
+<form asp-action="index" method="get">
+	
+		
+		<table class="table table-striped table-bordered table-hover g-5">
+
+
+			<label>Escolha um processo</label>
+			<select name="id" class="m-">
+
+				@foreach (var processo in ViewBag.Processos)
+				{
+					<option value="@processo.Id">
+						@processo.Id
+						@processo.Titulo
+
+					</option>
+
+
+				}
+			</select>
+			<button class="m-md-4 bg-primary bg-opacity-25"
+					type="submit">
+				Filtrar
+			</button>
+		</table>
+		
+
+</form>
+
+<table class="table table-striped table-bordered table-hover">
+		<Titulo>
+			Linhas de processos
+		</Titulo>
+
+	<thead class="table-dark">
+		<tr>
+			<th>ID</th>
+			<th>Data</th>
+			<th>Descrição</th>
+			<th>Funcionário</th>
+			<th>ProcessoID</th>
+		</tr>
+	</thead>
+	@foreach(var linhasProcessos in ViewBag.LinhasFiltradas)
+	{
+		
+		<tr>
+			<td>@linhasProcessos.Id</td>
+			<td>@linhasProcessos.Data?.ToString("dd/MM/yyyy")</td>
+			<td>@linhasProcessos.Texto</td>
+			<td>@linhasProcessos.FuncionarioId</td>
+			<td>@linhasProcessos.ProcessoId</td>
+		</tr>
+	}
+
+</table>
+	

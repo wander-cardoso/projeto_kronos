@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Processos";
+}
+
+<h2 class="mb-3">Lista de Processos</h2>
+
+<div class="mb-3">
+    <form method="get" class="d-flex gap-2">
+        <input type="text" name="nome" class="form-control" placeholder="Pesquisar por título..." />
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+        <a asp-action="Index" class="btn btn-secondary">Limpar</a>
+    </form>
+</div>
+
+@if (ViewBag.Mensagem != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.Mensagem
+    </div>
+}
+
+@if (ViewBag.Processos != null && ViewBag.Processos.Count > 0)
+{
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Cliente</th>
+                <th>Funcionário</th>
+                <th>Data Criação</th>
+                <th>Data Limite</th>
+                <th>Coima</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var processo in ViewBag.Processos)
+            {
+                <tr>
+                    <td>@processo.Id</td>
+                    <td>@processo.Titulo</td>
+                    <td>@processo.Descricao</td>
+                    <td>@processo.ClienteId</td>
+                    <td>@processo.FuncionarioId</td>
+                    <td>@processo.DataCriacao?.ToString("dd/MM/yyyy")</td>
+                    <td>@processo.DataLimite?.ToString("dd/MM/yyyy")</td>
+                    <td>@(processo.TemCoima ? "Sim" : "Não")</td>
+                    <td>@processo.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
