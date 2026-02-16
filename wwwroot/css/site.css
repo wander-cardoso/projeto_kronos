@@ -1,0 +1,109 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* ----------------------------------------------------------------- 2025-11-11 */
+/* Configurações globais da esfera */
+:root {
+    --sphere-start: #eaf2ff;
+    --sphere-end: #f6f0ff;
+    --sphere-alpha: 0.28;
+    --sphere-hover-alpha: 0.45;
+    --k-color: #006400; /* verde escuro */
+    --k-font-size: 2.1rem;
+    --size-k: 52px;
+}
+
+/* Esfera + K elegante */
+.letter-k {
+    --diam: var(--size-k);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--diam);
+    height: var(--diam);
+    border-radius: 50%;
+    background: linear-gradient( 135deg, rgba(234,242,255,var(--sphere-alpha)), rgba(246,240,255,var(--sphere-alpha)) );
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    /* K sofisticado */
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: var(--k-font-size);
+    letter-spacing: 0.5px;
+    color: var(--k-color) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+    /* Hover */
+    .letter-k:hover,
+    .letter-k:focus {
+        transform: scale(1.14);
+        background: linear-gradient( 135deg, rgba(234,242,255,var(--sphere-hover-alpha)), rgba(246,240,255,var(--sphere-hover-alpha)) );
+        box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+    }
+
+    /* Tooltip customizado */
+    .letter-k[title]:hover::after,
+    .letter-k[title]:focus::after {
+        content: attr(title);
+        position: absolute;
+        bottom: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(28,28,28,0.92);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 0.88rem;
+        white-space: nowrap;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        z-index: 1200;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    /* seta do tooltip */
+    .letter-k[title]:hover::before,
+    .letter-k[title]:focus::before {
+        content: "";
+        position: absolute;
+        bottom: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(28,28,28,0.92) transparent transparent transparent;
+    }
+/* -------------------------------------------------------------------------------- este bloco todo por causa do K verde...*/
+
+
+.home-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: #006400; /* verde escuro como o K */
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
