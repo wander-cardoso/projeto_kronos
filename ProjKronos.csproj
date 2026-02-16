@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="%40Diagramas\**" />
+    <Compile Remove="%40Enunciados\**" />
+    <Compile Remove="%40Models.AppGP\**" />
+    <Compile Remove="%40Models.PKX\**" />
+    <Compile Remove="%40MyUtils\**" />
+    <Compile Remove="Controllers\GesTarefas\**" />
+    <Compile Remove="Views\CD1\**" />
+    <Compile Remove="Views\Items\**" />
+    <Compile Remove="Views\ItensPorCliente\**" />
+    <Content Remove="%40Diagramas\**" />
+    <Content Remove="%40Enunciados\**" />
+    <Content Remove="%40Models.AppGP\**" />
+    <Content Remove="%40Models.PKX\**" />
+    <Content Remove="%40MyUtils\**" />
+    <Content Remove="Controllers\GesTarefas\**" />
+    <Content Remove="Views\CD1\**" />
+    <Content Remove="Views\Items\**" />
+    <Content Remove="Views\ItensPorCliente\**" />
+    <EmbeddedResource Remove="%40Diagramas\**" />
+    <EmbeddedResource Remove="%40Enunciados\**" />
+    <EmbeddedResource Remove="%40Models.AppGP\**" />
+    <EmbeddedResource Remove="%40Models.PKX\**" />
+    <EmbeddedResource Remove="%40MyUtils\**" />
+    <EmbeddedResource Remove="Controllers\GesTarefas\**" />
+    <EmbeddedResource Remove="Views\CD1\**" />
+    <EmbeddedResource Remove="Views\Items\**" />
+    <EmbeddedResource Remove="Views\ItensPorCliente\**" />
+    <None Remove="%40Diagramas\**" />
+    <None Remove="%40Enunciados\**" />
+    <None Remove="%40Models.AppGP\**" />
+    <None Remove="%40Models.PKX\**" />
+    <None Remove="%40MyUtils\**" />
+    <None Remove="Controllers\GesTarefas\**" />
+    <None Remove="Views\CD1\**" />
+    <None Remove="Views\Items\**" />
+    <None Remove="Views\ItensPorCliente\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\CD1.cs" />
+    <Compile Remove="Controllers\ClientesController - Copy.cs" />
+    <Compile Remove="Controllers\HomeOldController.cs" />
+    <Compile Remove="Controllers\ItensPorClienteController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
+</Project>
